@@ -24,11 +24,11 @@
 </div>
 
 <h2 align="left">📊 Stats</h2>
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=kiril-buga&langs_count=10&show_icons=true&locale=en&layout=compact&theme=react&border_radius=10&size_weight=0.5&count_weight=0.5" alt="kiril-buga" /></p>
+<p><img align="left" src="https://github-readme-stats-git-master-kiril-bugas-projects.vercel.app/api/top-langs?username=kiril-buga&langs_count=10&count_private=true&show_icons=true&locale=en&layout=compact&theme=react&border_radius=10&size_weight=0.5&count_weight=0.5" alt="kiril-buga" /></p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=kiril-buga&show_icons=true&locale=en&theme=react&rank_icon=github&border_radius=10" alt="kiril-buga" /></p>
+<p>&nbsp;<img align="center" src="https://github-readme-stats-git-master-kiril-bugas-projects.vercel.app/api?username=kiril-buga&count_private=true&show_icons=true&locale=en&theme=react&rank_icon=github&border_radius=10" alt="kiril-buga" /></p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=kiril-buga&theme=react&border_radius=10" alt="kiril-buga" /></p>
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=kiril-buga&theme=react&border_radius=10&count_private=true" alt="kiril-buga" /></p>
 
 <h2 align="left">🔗 Links:</h2>
 <p align="left">
