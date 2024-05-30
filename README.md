@@ -19,20 +19,19 @@
 <div align="center">
   <h2 align="left">🐍 My Contributions</h2>
   <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/salesp07/salesp07/output/github-contribution-grid-snake.svg" />
-  
   <br/>
 </div>
 
 <h2 align="left">📊 Stats</h2>
-<p><img align="left" src="https://github-readme-stats-git-master-kiril-bugas-projects.vercel.app/api/top-langs?username=kiril-buga&langs_count=10&count_private=true&show_icons=true&locale=en&layout=compact&theme=react&border_radius=10&size_weight=0.5&count_weight=0.5" alt="top-langs" /></p>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats-git-master-kiril-bugas-projects.vercel.app/api?username=kiril-buga&count_private=true&show_icons=true&locale=en&theme=react&rank_icon=github&border_radius=10" alt="stats" /></p>
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=kiril-buga&theme=react&border_radius=10&count_private=true" alt="stats" /></p>
+<div align=center>
+    <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=kiril-buga&count_private=true&theme=react&border_radius=10" alt="streak stats" />
+    <img align="center" src="https://github-readme-stats-git-master-kiril-bugas-projects.vercel.app/api?username=kiril-buga&count_private=true&show_icons=true&locale=en&theme=react&rank_icon=github&border_radius=10" alt="readme stats" />
+    <img width=390 align="center" src="https://github-readme-stats-git-master-kiril-bugas-projects.vercel.app/api/top-langs?username=kiril-buga&langs_count=10&count_private=true&show_icons=true&locale=en&layout=compact&theme=react&border_radius=10&size_weight=0.5&count_weight=0.5" alt="top-langs" />
+</div>
 
 <h2 align="left">🔗 Links:</h2>
 <p align="left">
-<a href="https://stackoverflow.com/users/22232716" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="https://stackoverflow.com/users/22232716" height="30" width="40" /></a>
-<a href="https://www.hackerrank.com/kirilbuga" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="kirilbuga" height="30" width="40" /></a>
-<a href="https://www.codingame.com/profile/65555efce02cdcf609dfe229f67d34b65438631"><img align="center" src="https://avatars.githubusercontent.com/u/6946974?s=200&v=4" alt="codingame" height="30" width="30" /></a>
+    <a href="https://stackoverflow.com/users/22232716" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="https://stackoverflow.com/users/22232716" height="30" width="40" /></a>
+    <a href="https://www.hackerrank.com/kirilbuga" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="hackerrank" height="30" width="40" /></a>
+    <a href="https://www.codingame.com/profile/65555efce02cdcf609dfe229f67d34b65438631"><img align="center" src="https://avatars.githubusercontent.com/u/6946974?s=200&v=4" alt="codingame" height="30" width="30" /></a>
 </p>
