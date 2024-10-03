@@ -20,12 +20,8 @@
   <h2 align="left">🐍 My Contributions</h2>
   <img alt="snake" src="https://raw.githubusercontent.com/salesp07/salesp07/output/github-contribution-grid-snake.svg" />
   <br/>
-    <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="github-snake.svg" />
-  <img alt="github-snake" src="github-snake.svg" />
-</picture>
 </div>
+<img alt="snake" src="https://raw.githubusercontent.com/kiril-buga/kiril-buga/output/github-contribution-grid-snake.svg" />
 
 <h2 align="left">📊 Stats</h2>
 <div align=center>
