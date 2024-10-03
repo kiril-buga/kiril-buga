@@ -18,10 +18,10 @@
 
 <div align="center">
   <h2 align="left">🐍 My Contributions</h2>
-  <img alt="snake" src="https://raw.githubusercontent.com/salesp07/salesp07/output/github-contribution-grid-snake.svg" />
+  <img alt="snake" src="https://raw.githubusercontent.com/kiril-buga/kiril-buga/output/github-contribution-grid-snake.svg" />
   <br/>
 </div>
-<img alt="snake" src="https://raw.githubusercontent.com/kiril-buga/kiril-buga/output/github-contribution-grid-snake.svg" />
+
 
 <h2 align="left">📊 Stats</h2>
 <div align=center>
