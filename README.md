@@ -4,7 +4,7 @@
 
 <p align="right"> 
   <a href="#"> 
-    <img src="https://visitor-badge-deno.deno.dev/kiril-buga.svg" alt="kiril-buga" /> 
+    <img src="https://visitor-badge-deno.deno.dev/kiril-buga.svg" alt="" /> 
   </a> 
 </p>
 
