@@ -26,7 +26,7 @@
 
 <h2 align="left">📊 Stats</h2>
 <div align=center>
-    <img align="center" src="https://github-readme-streak-stats-yzbh.vercel.app?user=kiril-buga&theme=react&border_radius=10" alt="streak stats" />
+    <img align="center" src="https://github-readme-streak-stats-five-sigma.vercel.app/?user=kiril-buga&theme=react&border_radius=10" alt="streak stats" />
     <img align="center" src="https://github-readme-stats-git-master-kiril-bugas-projects.vercel.app/api?username=kiril-buga&count_private=true&show_icons=true&locale=en&theme=react&rank_icon=github&border_radius=10" alt="readme stats" />
     <img width=390 align="center" src="https://github-readme-stats-git-master-kiril-bugas-projects.vercel.app/api/top-langs?username=kiril-buga&langs_count=6&hide=php&count_private=true&show_icons=true&locale=en&layout=compact&theme=react&border_radius=10&size_weight=0.5&count_weight=0.5" alt="top-langs" />
 </div>
