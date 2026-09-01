@@ -5,38 +5,115 @@ on:
     - cron: "0 3 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+# The stats/top-langs cards query user-level GraphQL data, which the default
+# GITHUB_TOKEN is not allowed to read ("Resource not accessible by
+# integration"). Add a classic PAT with `read:user` + `repo` as the PAT_1
+# secret; the cards fall back to GITHUB_TOKEN so the workflow still runs
+# without it.
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
+      - name: Prepare staging directory
+        run: mkdir -p .cards profile
+
       - name: Generate stats card
+        continue-on-error: true
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
           options: username=kiril-buga&count_private=true&show_icons=true&locale=en&theme=react&rank_icon=github&border_radius=10
-          path: profile/stats.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: .cards/stats.svg
+          token: ${{ secrets.PAT_1 || secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
+        continue-on-error: true
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
           options: username=kiril-buga&langs_count=6&hide=php&count_private=true&show_icons=true&locale=en&layout=compact&theme=react&border_radius=10&size_weight=0.5&count_weight=0.5
-          path: profile/top-langs.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: .cards/top-langs.svg
+          token: ${{ secrets.PAT_1 || secrets.GITHUB_TOKEN }}
 
       - name: Generate streak card
+        continue-on-error: true
         run: |
-          mkdir -p profile
-          curl -s "https://github-readme-streak-stats-yzbh.vercel.app?user=kiril-buga&theme=react&border_radius=10" \
-            -o profile/streak.svg
+          # The streak card comes from a public instance, which occasionally
+          # rate-limits us and answers with a "Failed to retrieve
+          # contributions" card. Try the upstream instance first, then the
+          # mirror, before giving up.
+          for host in \
+            "https://streak-stats.demolab.com" \
+            "https://github-readme-streak-stats-yzbh.vercel.app"
+          do
+            for attempt in 1 2 3; do
+              if curl -fsS --max-time 30 \
+                "${host}/?user=kiril-buga&theme=react&border_radius=10" \
+                -o .cards/streak.svg && ! grep -q 'Failed to retrieve' .cards/streak.svg
+              then
+                echo "streak card fetched from ${host} (attempt ${attempt})"
+                exit 0
+              fi
+              sleep $((attempt * 5))
+            done
+            echo "::warning::streak card unavailable from ${host}"
+          done
+          rm -f .cards/streak.svg
+          exit 1
+
+      - name: Publish only the cards that rendered
+        id: publish
+        run: |
+          # A failed card is still a valid SVG - it just says "Something went
+          # wrong" - so the old workflow happily committed error cards over
+          # good ones. Only promote a card that actually rendered, and keep
+          # the previous one otherwise.
+          failed=""
+          for card in stats top-langs streak; do
+            src=".cards/${card}.svg"
+            if [ ! -s "$src" ]; then
+              echo "::warning::${card}: no card was produced"
+              failed="${failed} ${card}"
+              continue
+            fi
+            if ! grep -q '<svg' "$src"; then
+              echo "::warning::${card}: output is not an SVG"
+              failed="${failed} ${card}"
+              continue
+            fi
+            if grep -qE 'Something went wrong|Failed to retrieve|Maximum retries exceeded|Bad credentials|Resource not accessible|Could not (fetch|resolve)' "$src"; then
+              echo "::warning::${card}: card rendered an error, keeping the previous one"
+              sed -n 's/.*\(Something went wrong[^<]*\|Failed to retrieve[^<]*\|Resource not accessible[^<]*\).*/  -> \1/p' "$src" | head -2
+              failed="${failed} ${card}"
+              continue
+            fi
+            cp "$src" "profile/${card}.svg"
+            echo "${card}: ok"
+          done
+          rm -rf .cards
+          echo "failed=${failed# }" >> "$GITHUB_OUTPUT"
 
       - name: Commit cards
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add profile/*.svg
-          git commit -m "Update README cards" || exit 0
+          git diff --cached --quiet && echo "No card changes" && exit 0
+          git commit -m "Update README cards"
           git push
+
+      - name: Report failed cards
+        if: steps.publish.outputs.failed != ''
+        run: |
+          echo "::error::These cards could not be refreshed:${{ steps.publish.outputs.failed }}"
+          echo "The previous versions are still in profile/ so the README keeps rendering."
+          echo "If 'stats' or 'top-langs' keep failing with 'Resource not accessible by"
+          echo "integration', add a classic PAT with read:user + repo scope as the PAT_1"
+          echo "repository secret - the default GITHUB_TOKEN cannot read user-level stats."
+          exit 1

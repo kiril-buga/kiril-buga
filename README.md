@@ -3,9 +3,7 @@
 </h1>
 
 <p align="right"> 
-  <a href="#"> 
-    <img src="https://visitor-badge-deno.deno.dev/kiril-buga.svg" alt="" /> 
-  </a> 
+  <img src="https://komarev.com/ghpvc/?username=kiril-buga&label=Profile%20views&color=61dafb&style=flat" alt="Profile views" /> 
 </p>
 
 <h2 align="left">🥇 Trophies</h2>
@@ -29,9 +27,9 @@
 
 <h2 align="left">📊 Stats</h2>
 <div align="center">
-    <img src="./profile/streak.svg" alt="streak stats" />
-    <img src="./profile/stats.svg" alt="readme stats" />
-    <img width="390" src="./profile/top-langs.svg" alt="top langs" />
+    <img height="195" src="./profile/streak.svg" alt="streak stats" />
+    <img height="195" src="./profile/stats.svg" alt="readme stats" />
+    <img height="195" src="./profile/top-langs.svg" alt="top langs" />
 </div>
 
 <h2 align="left">🔗 Links</h2>
