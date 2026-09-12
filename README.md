@@ -31,9 +31,9 @@
 
 <h2 align="left">📊 Stats</h2>
 <div align="center">
-    <img height="195" src="./profile/streak.svg" alt="streak stats" />
-    <img height="195" src="./profile/stats.svg" alt="readme stats" />
-    <img height="195" src="./profile/top-langs.svg" alt="top langs" />
+    <img height="200" src="./profile/streak.svg" alt="streak stats" />
+    <img height="200" src="./profile/stats.svg" alt="readme stats" />
+    <img height="200" src="./profile/top-langs.svg" alt="top langs" />
 </div>
 
 <h2 align="left">🔗 Links</h2>
