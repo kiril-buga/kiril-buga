@@ -7,7 +7,11 @@
 </p>
 
 <h2 align="left">🥇 Trophies</h2>
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy-eta-eight.vercel.app/?username=kiril-buga&rank=-C,-?&theme=dracula" alt="" /></a> </p>
+<p align="left">
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy-eta-eight.vercel.app/?username=kiril-buga&amp;theme=dracula&amp;no-frame=true&amp;no-bg=true&amp;margin-w=15" alt="GitHub trophies" />
+  </a>
+</p>
 
 
 <h2 align="left">🚀 Languages and Tools</h2>
