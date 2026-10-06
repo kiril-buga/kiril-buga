@@ -2,10 +2,6 @@
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hi+!+👋;+⚡️Welcome+to+my+profile+!⚡️;" />
 </h1>
 
-<p align="right"> 
-  <img src="https://komarev.com/ghpvc/?username=kiril-buga&label=Profile%20views&color=61dafb&style=flat" alt="Profile views" /> 
-</p>
-
 <h2 align="left">🥇 Trophies</h2>
 <p align="left">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
