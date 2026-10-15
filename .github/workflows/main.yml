@@ -43,10 +43,25 @@ jobs:
         run: git status
 
       - name: Push new files to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: dist
-          commit_message: Update snake animations
+        run: |
+          # GitHub occasionally rejects the push with "fatal error in
+          # commit_refs"; retry a few times before failing.
+          tmp=$(mktemp -d)
+          cp dist/* "$tmp"/
+          cd "$tmp"
+          git init -q .
+          git checkout -q --orphan output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all .
+          git commit -q -m "Update snake animations"
+          for attempt in 1 2 3 4 5; do
+            if git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output; then
+              exit 0
+            fi
+            echo "::warning::push failed (attempt ${attempt}), retrying"
+            sleep $((attempt * 10))
+          done
+          exit 1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
